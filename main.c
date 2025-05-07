@@ -4,11 +4,6 @@
 #include "grid.h"
 
 
-/*
- * This example creates an SDL window and renderer, and then draws some lines,
- * rectangles and points to it every frame.
- */
-
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
@@ -40,11 +35,8 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 {
     GetMatrixSize();
     AllocateMemory();
-
     currentFrameTime = SDL_GetPerformanceCounter();
-
     RandomizeNodeStates();
-
     return InitSDL();
 }
 
@@ -64,7 +56,6 @@ SDL_AppResult SDL_AppIterate(void* appstate)
     // Init vars
     SDL_FRect rect;
 
-    /* as you can see from this, rendering draws over whatever was drawn before it. */
     SDL_SetRenderDrawColor(renderer, 0, 78, 33, SDL_ALPHA_OPAQUE);  /* dark gray, full alpha */
     SDL_RenderClear(renderer);  /* start with a blank canvas. */
 
